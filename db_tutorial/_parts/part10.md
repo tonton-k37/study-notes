@@ -3,15 +3,26 @@ title: Part 10 - リーフノードの分割
 date: 2017-10-09
 ---
 
+> 🎯 **このパートを学ぶ理由**: B-Tree成長の核心。ノードが溢れた時に2つに分割し、親ノードを作るアルゴリズム。「ツリーが下から上に成長する」というB-Treeの特徴を体験する。
+> **前提知識**: Part 8-9（リーフノード + 二分探索）
+
 1つしかノードがないB-Treeはツリーらしくない。これを解決するために、リーフノードを2つに分割するコードが必要だ。そしてその後、2つのリーフノードの親となる内部ノードを作成する必要がある。
 
 この記事の目標は、こうなっている状態から：
 
-{% include image.html url="assets/images/btree2.png" description="1ノードのbtree" %}
+```mermaid
+graph TD
+    L1["リーフノード<br>1, 2, 3 ... 13, 14"]
+```
 
 こうする：
 
-{% include image.html url="assets/images/btree3.png" description="2階層のbtree" %}
+```mermaid
+graph TD
+    R["内部ノード (ルート)<br>キー: 7"]
+    R --> L1["左の子 (リーフ)<br>1, 2 ... 7"]
+    R --> L2["右の子 (リーフ)<br>8, 9 ... 14, 15"]
+```
 
 まず、リーフノードがいっぱいの場合のエラー処理を削除する：
 
@@ -490,3 +501,11 @@ Need to implement searching an internal node
 おっと！あのTODOメッセージを書いたのは誰だ :P
 
 次回はB-tree壮大な物語の続きとして、複数階層のツリーでの検索を実装する。
+
+---
+
+<div align="center">
+
+[← 前へ: Part 9 - 二分探索](./part9.md) | [次へ: Part 11 - B-Treeの再帰的検索 →](./part11.md)
+
+</div>

@@ -3,6 +3,9 @@ title: Part 14 - 内部ノードの分割
 date: 2023-05-23
 ---
 
+> 🎯 **このパートを学ぶ理由**: B-Tree実装の最終段階。内部ノードも分割できるようになり、任意の数のデータを格納できる完全なB-Treeが完成する。
+> **前提知識**: Part 10-13（ノード分割 + 親ノード更新）
+
 旅の次の区間は、新しいキーを収容できない内部ノードの分割だ。以下の例を考えてみよう：
 
 {% include image.html url="assets/images/splitting-internal-node.png" description="内部ノード分割の例" %}
@@ -563,3 +566,11 @@ date: 2023-05-23
 +    ])
 +  end
 ```
+
+---
+
+<div align="center">
+
+[← 前へ: Part 13 - 親ノードの更新](./part13.md) | [次へ: Part 15 - まとめ →](./part15.md)
+
+</div>
